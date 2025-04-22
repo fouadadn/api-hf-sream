@@ -8,6 +8,9 @@ app.get('/', async (req, reply) => {
   return reply.status(200).type('text/html').send(html)
 })
 
+app.get('/wishlist', function (req, res) {
+  res.status(200).send({ "message": ["user wishlist"] })
+})
 export default async function handler(req, reply) {
   await app.ready()
   app.server.emit('request', req, reply)
