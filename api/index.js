@@ -12,9 +12,14 @@ app.get('/', async (req, reply) => {
   return reply.status(200).send({ message: 'hello from fouad' })
 })
 
-async function start() {
-  await app.listen({ port: 3001 })
-  console.log('Server is running at http://localhost:3001')
-}
+// async function start() {
+//   await app.listen({ port: 3001 })
+//   console.log('Server is running at http://localhost:3001')
+// }
 
-start()
+// start()
+
+export default async function handler(req, reply) {
+  await app.ready()
+  app.server.emit('request', req, reply)
+}
