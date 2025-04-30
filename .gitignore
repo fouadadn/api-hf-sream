@@ -32,3 +32,7 @@ yarn-error.log*
 
 # Turborepo
 .turbo
+
+# Ignore Firebase admin credentials
+api-hf-stream-firebase-adminsdk-fbsvc-f39be54a0a.json
+
